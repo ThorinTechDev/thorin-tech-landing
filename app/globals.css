@@ -1,0 +1,321 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   THORIN TECH DESIGN SYSTEM
+============================================================ */
+
+:root {
+  /* Light Mode */
+
+  --background: #f8fbff;
+  --foreground: #021b52;
+
+  --card: #ffffff;
+  --card-foreground: #021b52;
+
+  --popover: #ffffff;
+  --popover-foreground: #021b52;
+
+  /* Brand */
+  --primary: #005dff;
+  --primary-foreground: #ffffff;
+
+  --secondary: #eef6ff;
+  --secondary-foreground: #021b52;
+
+  --accent: #00d4ff;
+  --accent-foreground: #021b52;
+
+  --muted: #f4f8ff;
+  --muted-foreground: #6077a6;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #d7e5ff;
+  --input: #d7e5ff;
+  --ring: #00d4ff;
+
+  /* Charts */
+  --chart-1: #005dff;
+  --chart-2: #00d4ff;
+  --chart-3: #1e90ff;
+  --chart-4: #4ccfff;
+  --chart-5: #021b52;
+
+  --radius: 0.75rem;
+
+  /* Sidebar */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #021b52;
+
+  --sidebar-primary: #005dff;
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-accent: #eef6ff;
+  --sidebar-accent-foreground: #021b52;
+
+  --sidebar-border: #d7e5ff;
+  --sidebar-ring: #00d4ff;
+
+  /* Custom */
+  --glow: #00d4ff;
+  --glow-secondary: #005dff;
+  --grid-color: rgba(0, 93, 255, 0.08);
+}
+
+/* ============================================================
+   DARK MODE (THORIN TECH)
+============================================================ */
+
+.dark {
+  --background: #03102f;
+  --foreground: #e6ffff;
+
+  --card: #071a45;
+  --card-foreground: #e6ffff;
+
+  --popover: #071a45;
+  --popover-foreground: #e6ffff;
+
+  --primary: #005dff;
+  --primary-foreground: #ffffff;
+
+  --secondary: #0b204f;
+  --secondary-foreground: #e6ffff;
+
+  --accent: #00d4ff;
+  --accent-foreground: #03102f;
+
+  --muted: #102b66;
+  --muted-foreground: #a8c6ff;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #173979;
+  --input: #173979;
+  --ring: #00d4ff;
+
+  /* Charts */
+  --chart-1: #005dff;
+  --chart-2: #00d4ff;
+  --chart-3: #1e90ff;
+  --chart-4: #66dfff;
+  --chart-5: #7ddfff;
+
+  /* Sidebar */
+  --sidebar: #051735;
+  --sidebar-foreground: #e6ffff;
+
+  --sidebar-primary: #005dff;
+  --sidebar-primary-foreground: #ffffff;
+
+  --sidebar-accent: #0b204f;
+  --sidebar-accent-foreground: #e6ffff;
+
+  --sidebar-border: #173979;
+  --sidebar-ring: #00d4ff;
+
+  /* Custom */
+  --glow: #00d4ff;
+  --glow-secondary: #005dff;
+  --grid-color: rgba(0, 212, 255, 0.08);
+}
+
+/* ============================================================
+   TAILWIND THEME
+============================================================ */
+
+@theme inline {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-glow: var(--glow);
+  --color-grid: var(--grid-color);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ============================================================
+   BASE
+============================================================ */
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+
+    background:
+      radial-gradient(
+        circle at top center,
+        rgba(0, 212, 255, 0.15),
+        transparent 30%
+      ),
+      var(--background);
+  }
+}
+
+/* ============================================================
+   THORIN GLASS EFFECT
+============================================================ */
+
+.glass-card {
+  background: rgba(0, 93, 255, 0.04);
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(0, 212, 255, 0.15);
+
+  box-shadow:
+    0 0 10px rgba(0, 93, 255, 0.20),
+    0 0 30px rgba(0, 212, 255, 0.10),
+    inset 0 0 20px rgba(0, 212, 255, 0.04);
+}
+
+.dark .glass-card {
+  background: rgba(7, 26, 69, 0.8);
+
+  box-shadow:
+    0 0 15px rgba(0, 93, 255, 0.35),
+    0 0 40px rgba(0, 212, 255, 0.15),
+    inset 0 0 25px rgba(0, 212, 255, 0.05);
+}
+
+/* ============================================================
+   GRID
+============================================================ */
+
+.grid-bg {
+  background-image:
+    linear-gradient(
+      rgba(0, 212, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+/* ============================================================
+   GLOW EFFECTS
+============================================================ */
+
+.glow-blue {
+  box-shadow:
+    0 0 10px rgba(0, 93, 255, 0.5),
+    0 0 20px rgba(0, 93, 255, 0.4),
+    0 0 40px rgba(0, 212, 255, 0.25);
+}
+
+.glow-text {
+  text-shadow:
+    0 0 5px rgba(0, 212, 255, 0.7),
+    0 0 15px rgba(0, 212, 255, 0.4),
+    0 0 30px rgba(0, 93, 255, 0.25);
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+
+@keyframes grid-fade {
+  0%,100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,100% {
+    opacity: 0.5;
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(30px);
+  }
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-grid-fade {
+  animation: grid-fade 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
